@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flushbar/flushbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../values/default_country_data.dart';
 import 'package:flutter/material.dart';
@@ -83,12 +82,11 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                 child: AutoSizeText(
                   "Today",
                   style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontWeight: selectedIndex == 0
-                          ? FontWeight.w700
-                          : FontWeight.w600,
-                      color: Colors.grey[800],
-                      fontSize: 22.0,
+                    fontFamily: "Montserrat",
+                    fontWeight:
+                        selectedIndex == 0 ? FontWeight.w700 : FontWeight.w600,
+                    color: Colors.grey[800],
+                    fontSize: 22.0,
                   ),
                   maxFontSize: 22,
                 ),
@@ -108,12 +106,11 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                 child: AutoSizeText(
                   "Yesterday",
                   style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontWeight: selectedIndex == 0
-                          ? FontWeight.w600
-                          : FontWeight.w700,
-                      color: Colors.grey[800],
-                      fontSize: 22.0,
+                    fontFamily: "Montserrat",
+                    fontWeight:
+                        selectedIndex == 0 ? FontWeight.w600 : FontWeight.w700,
+                    color: Colors.grey[800],
+                    fontSize: 22.0,
                   ),
                   maxFontSize: 22,
                 ),
@@ -182,29 +179,29 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                       await SharedPreferences.getInstance();
                   prefs.setString("defaultCountry", json.encode(jsonMap));
                   Navigator.of(context).pop();
-                  Flushbar(
-                    messageText: AutoSizeText(
-                      "${widget.countryName} set as default country",
-                      style: TextStyle(
-                        fontFamily: "Montserrat",
-                        fontSize: 17,
-                        color: Colors.white
-                      ),
-                      maxFontSize: 17,
-                    ),
-                    flushbarPosition: FlushbarPosition.BOTTOM,
-                    flushbarStyle: FlushbarStyle.FLOATING,
-                    icon: Icon(
-                      Icons.info_outline,
-                      size: 28.0,
-                      color: widget.color,
-                    ),
-                    padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
-                    shouldIconPulse: false,
-                    dismissDirection: FlushbarDismissDirection.HORIZONTAL,
-                    duration: Duration(seconds: 3),
-                    leftBarIndicatorColor: widget.color,
-                  )..show(context);
+                  // Flushbar(
+                  //   messageText: AutoSizeText(
+                  //     "${widget.countryName} set as default country",
+                  //     style: TextStyle(
+                  //       fontFamily: "Montserrat",
+                  //       fontSize: 17,
+                  //       color: Colors.white
+                  //     ),
+                  //     maxFontSize: 17,
+                  //   ),
+                  //   flushbarPosition: FlushbarPosition.BOTTOM,
+                  //   flushbarStyle: FlushbarStyle.FLOATING,
+                  //   icon: Icon(
+                  //     Icons.info_outline,
+                  //     size: 28.0,
+                  //     color: widget.color,
+                  //   ),
+                  //   padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
+                  //   shouldIconPulse: false,
+                  //   dismissDirection: FlushbarDismissDirection.HORIZONTAL,
+                  //   duration: Duration(seconds: 3),
+                  //   leftBarIndicatorColor: widget.color,
+                  // )..show(context);
                 },
                 child: Container(
                   width: double.infinity,
