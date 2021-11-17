@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:covidtracker/core/enum/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -125,5 +126,3 @@ class ApiClient {
     return date;
   }
 }
-
-enum StateLocation { GLOBAL, SPECIFIC, ALL, TOP_FIVE }

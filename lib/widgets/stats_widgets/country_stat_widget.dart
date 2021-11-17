@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covidtracker/core/enum/state_enum.dart';
 import 'package:covidtracker/values/default_country_data.dart';
 
 import '../../widgets/stats_widgets/country_card_details.dart';
@@ -192,11 +193,11 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                               return AutoSizeText(
                                 "Unavailable",
                                 style: TextStyle(
-                                    fontFamily: "Montserrat",
-                                    color: Colors.white,
-                                    fontSize: 37,
-                                    letterSpacing: 1.1,
-                                    fontWeight: FontWeight.w600,
+                                  fontFamily: "Montserrat",
+                                  color: Colors.white,
+                                  fontSize: 37,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600,
                                 ),
                                 maxFontSize: 37,
                               );
@@ -206,11 +207,11 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                                 return AutoSizeText(
                                   snapshot.data.toString(),
                                   style: TextStyle(
-                                      fontFamily: "Montserrat",
-                                      color: Colors.white,
-                                      fontSize: 37,
-                                      letterSpacing: 1.1,
-                                      fontWeight: FontWeight.w600,
+                                    fontFamily: "Montserrat",
+                                    color: Colors.white,
+                                    fontSize: 37,
+                                    letterSpacing: 1.1,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                   maxFontSize: 37,
                                 );
@@ -218,11 +219,11 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                               return AutoSizeText(
                                 formatter.format(todayJson["cases"]),
                                 style: TextStyle(
-                                    fontFamily: "Montserrat",
-                                    color: Colors.white,
-                                    fontSize: 37,
-                                    letterSpacing: 1.1,
-                                    fontWeight: FontWeight.w600,
+                                  fontFamily: "Montserrat",
+                                  color: Colors.white,
+                                  fontSize: 37,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600,
                                 ),
                                 maxFontSize: 37,
                               );
@@ -230,11 +231,11 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                             return AutoSizeText(
                               formatter.format(widget.totalCases),
                               style: TextStyle(
-                                  fontFamily: "Montserrat",
-                                  color: Colors.white,
-                                  fontSize: 37,
-                                  letterSpacing: 1.1,
-                                  fontWeight: FontWeight.w600,
+                                fontFamily: "Montserrat",
+                                color: Colors.white,
+                                fontSize: 37,
+                                letterSpacing: 1.1,
+                                fontWeight: FontWeight.w600,
                               ),
                               maxFontSize: 37,
                             );
@@ -337,7 +338,8 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                   } else {
                     return CountryStatLoader(
                       color: widget.color,
-                      isDefault: defaultCountry.countryName==widget.countryName,
+                      isDefault:
+                          defaultCountry.countryName == widget.countryName,
                     );
                   }
                 },

@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covidtracker/core/enum/state_enum.dart';
 
 import '../../widgets/stats_widgets/affected_map_container.dart';
 import '../../widgets/stats_widgets/global_case_container.dart';
@@ -39,7 +40,7 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
     var pakStats;
     try {
       pakStats =
-      await _client.getStatsResponse(StateLocation.SPECIFIC, code: "PK");
+          await _client.getStatsResponse(StateLocation.SPECIFIC, code: "PK");
     } on FetchDataException catch (fde) {
       return fde;
     }
@@ -142,7 +143,9 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width > 360.0
                             ? 55.0
-                            : MediaQuery.of(context).size.width > 340.0? 40 :30,
+                            : MediaQuery.of(context).size.width > 340.0
+                                ? 40
+                                : 30,
                       ),
 
                       //Text
@@ -206,10 +209,10 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                             AutoSizeText(
                               "Top Countries",
                               style: TextStyle(
-                                  fontFamily: "Montserrat",
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
+                                fontFamily: "Montserrat",
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
                               ),
                               maxFontSize: 18,
                             ),
@@ -248,9 +251,7 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                       Expanded(
                         child: FutureBuilder<dynamic>(
                           future: _topSixFuture,
-                          builder: (context,
-                              AsyncSnapshot<dynamic>
-                                  snapshot) {
+                          builder: (context, AsyncSnapshot<dynamic> snapshot) {
                             if (snapshot.hasError) {
                               return Container(
                                 margin: const EdgeInsets.symmetric(
